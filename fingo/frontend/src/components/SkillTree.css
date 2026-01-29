@@ -1,0 +1,97 @@
+.skill-tree-container {
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unit-section {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.unit-header {
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.unit-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.unit-header p {
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+}
+
+.lesson-path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 2rem;
+}
+
+.lesson-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lesson-node:active {
+    transform: scale(0.9) !important;
+}
+
+.node-outer {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 0 #e5e5e5;
+    border: 2px solid #e5e5e5;
+}
+
+.node-inner {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+}
+
+.lesson-node.locked .node-outer {
+    background: #e5e5e5;
+    box-shadow: 0 8px 0 #afafaf;
+}
+
+.lesson-label {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    border: 2px solid #e5e5e5;
+    box-shadow: 0 2px 0 #e5e5e5;
+}
+
+.lesson-node.locked .lesson-label {
+    color: #afafaf;
+}

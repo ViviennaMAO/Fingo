@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "staticPath": [
+    "static"
+  ],
+  "window": {
+    "backgroundColor": "#F7F7F7",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "Fingo",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,250 @@
+.exercise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: #4b4b4b;
+}
+
+.exercise-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #afafaf;
+    cursor: pointer;
+}
+
+.progress-container {
+    flex: 1;
+    height: 12px;
+    background: #e5e5e5;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #58cc02;
+    transition: width 0.3s ease;
+}
+
+.hearts {
+    font-weight: bold;
+    color: #ff4b4b;
+}
+
+.exercise-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.question-text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.options-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.option-button {
+    padding: 1rem 1.5rem;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+    background: white;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 0 #e5e5e5;
+    transition: all 0.1s;
+}
+
+.option-button.selected {
+    border-color: #84d8ff;
+    background: #ddf4ff;
+    box-shadow: 0 4px 0 #84d8ff;
+    color: #1899d6;
+}
+
+.option-number {
+    border: 2px solid #e5e5e5;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #afafaf;
+}
+
+.option-button.selected .option-number {
+    border-color: #84d8ff;
+    color: #1899d6;
+}
+
+.mascot-feedback-area {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.mascot-avatar {
+    font-size: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.mascot-avatar.happy {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.mascot-avatar.sad {
+    transform: scale(0.9) rotate(-5deg);
+}
+
+.mascot-bubble {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+    position: relative;
+    font-weight: bold;
+}
+
+.mascot-bubble::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 10px solid #e5e5e5;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.action-bar,
+.feedback-bar {
+    padding: 1.5rem 2rem;
+    border-top: 2px solid #e5e5e5;
+    background: white;
+}
+
+.check-button,
+.continue-button {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    padding: 1rem;
+    border-radius: 15px;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.check-button {
+    background: #58cc02;
+    color: white;
+    box-shadow: 0 4px 0 #46a302;
+}
+
+.check-button:disabled {
+    background: #e5e5e5;
+    color: #afafaf;
+    box-shadow: 0 4px 0 #afafaf;
+    cursor: not-allowed;
+}
+
+.feedback-bar {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.feedback-bar.visible {
+    display: block;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.feedback-bar.correct {
+    background: #d7ffb8;
+    border-top-color: #b8f28b;
+}
+
+.feedback-bar.incorrect {
+    background: #ffdfe0;
+    border-top-color: #ffc1c3;
+}
+
+.feedback-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback-text h3 {
+    margin: 0;
+    color: #58a700;
+}
+
+.feedback-bar.incorrect .feedback-text h3 {
+    color: #ea2b2b;
+}
+
+.feedback-text p {
+    margin: 0.2rem 0 0;
+    font-weight: 500;
+}
+
+.continue-button {
+    width: auto;
+    min-width: 150px;
+    background: #58cc02;
+    color: white;
+    box-shadow: 0 4px 0 #46a302;
+}
+
+.feedback-bar.incorrect .continue-button {
+    background: #ff4b4b;
+    box-shadow: 0 4px 0 #d33131;
+}
