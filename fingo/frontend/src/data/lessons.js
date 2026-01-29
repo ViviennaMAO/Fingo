@@ -706,13 +706,14 @@ export const UNITS = [
         ]
     },
 
-    // 4. 中央银行与货币政策 (Central Banking)
+    // 4. 中央银行与货币政策 (Central Banking & Monetary Policy)
     {
         id: 'unit_4',
         title: 'Central Banking & Policy',
-        description: 'Learn how central banks control money and economy.',
+        description: 'Master how central banks control money and implement policy.',
         color: '#ce82ff',
         lessons: [
+            // 第13章 中央银行与联邦储备体系
             {
                 id: 'lesson_4_1',
                 title: 'The Federal Reserve',
@@ -723,111 +724,512 @@ export const UNITS = [
                         question: 'What is the primary mandate of the Federal Reserve?',
                         options: [
                             'Maximize stock prices',
-                            'Price stability and maximum employment',
+                            'Price stability and maximum employment (dual mandate)',
                             'Fund government spending',
                             'Regulate all businesses'
                         ],
                         correctIndex: 1,
-                        explanation: 'The Fed has a dual mandate: maintain price stability (control inflation) and achieve maximum sustainable employment.'
+                        explanation: 'The Fed has a dual mandate: maintain price stability (control inflation around 2%) and achieve maximum sustainable employment.'
                     },
                     {
                         type: 'multiple_choice',
-                        question: 'The FOMC (Federal Open Market Committee) is responsible for:',
+                        question: 'The FOMC (Federal Open Market Committee) consists of:',
                         options: [
-                            'Printing currency',
-                            'Setting monetary policy and interest rates',
-                            'Regulating banks',
-                            'Collecting taxes'
+                            'Only the Fed Chair',
+                            '7 Board Governors + 5 Reserve Bank Presidents (rotating)',
+                            'All 12 Reserve Bank Presidents',
+                            'Congressional appointees only'
                         ],
                         correctIndex: 1,
-                        explanation: 'The FOMC sets the target federal funds rate and directs open market operations, making key monetary policy decisions.'
+                        explanation: 'FOMC has 12 voting members: 7 Board of Governors + NY Fed President (permanent) + 4 rotating regional Fed Presidents.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The Federal Reserve System was established in:',
+                        options: [
+                            '1776',
+                            '1913',
+                            '1929',
+                            '1971'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The Federal Reserve Act of 1913 created the Fed in response to the Panic of 1907, establishing America\'s central bank.'
                     }
                 ]
             },
             {
                 id: 'lesson_4_2',
-                title: 'Money Supply',
+                title: 'Fed Independence',
+                icon: '⚖️',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'Why is central bank independence important?',
+                        options: [
+                            'It\'s not important',
+                            'Prevents political pressure to print money before elections',
+                            'Makes the Fed more profitable',
+                            'Speeds up decision making'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Independence prevents politicians from pressuring the central bank to stimulate the economy short-term (especially before elections) at the cost of long-term inflation.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'Paul Volcker\'s fight against inflation in the early 1980s demonstrated:',
+                        options: [
+                            'Political pressure always wins',
+                            'Fed independence allows unpopular but necessary policies',
+                            'Inflation is impossible to control',
+                            'Interest rates don\'t affect inflation'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Volcker raised rates to 20% despite recession and political pressure, successfully breaking 1970s inflation. This showed the value of Fed independence.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'If a president publicly pressures the Fed Chair to cut rates, markets typically:',
+                        options: [
+                            'Celebrate the good news',
+                            'Worry about Fed credibility and long-term inflation',
+                            'Ignore it completely',
+                            'Expect immediate rate cuts'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Political pressure on the Fed raises concerns about monetary policy credibility, potentially leading to higher inflation expectations and bond yields.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order these Fed Chairs chronologically:',
+                        items: ['Paul Volcker', 'Alan Greenspan', 'Ben Bernanke', 'Jerome Powell'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            // 第14章 货币供给过程
+            {
+                id: 'lesson_4_3',
+                title: 'Money Supply Process',
                 icon: '💵',
                 questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'The three main participants in the money supply process are:',
+                        options: [
+                            'Congress, President, Treasury',
+                            'Central bank, commercial banks, depositors',
+                            'Stock market, bond market, forex market',
+                            'IMF, World Bank, BIS'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Money supply is created through interactions between: (1) Central bank (sets monetary base), (2) Banks (create deposits through lending), (3) Depositors (affect currency/deposit ratio).'
+                    },
                     {
                         type: 'multiple_choice',
                         question: 'The Money Supply Process involves:',
                         options: [
                             'Only the central bank printing money',
-                            'Central bank actions and commercial bank lending',
+                            'Central bank monetary base + commercial bank lending multiplier',
                             'Government spending only',
                             'Foreign exchange trading'
                         ],
                         correctIndex: 1,
-                        explanation: 'Money supply is determined by central bank monetary base AND commercial banks creating money through lending (money multiplier effect).'
+                        explanation: 'M = m × MB. Money supply equals the money multiplier (m) times the monetary base (MB). Banks multiply the base through fractional reserve lending.'
                     },
                     {
                         type: 'sort',
                         question: 'Order by liquidity (most liquid first):',
-                        items: ['M0 (Currency)', 'M1 (+ Checking)', 'M2 (+ Savings)', 'M3 (+ Large Deposits)'],
+                        items: ['M0 (Currency in circulation)', 'M1 (+ Demand deposits)', 'M2 (+ Savings, small time deposits)', 'M3 (+ Large time deposits)'],
                         correctOrder: [0, 1, 2, 3]
                     }
                 ]
             },
             {
-                id: 'lesson_4_3',
-                title: 'Open Market Operations',
-                icon: '📊',
-                questions: [
-                    {
-                        type: 'multiple_choice',
-                        question: 'When the Fed buys government bonds, it:',
-                        options: [
-                            'Decreases money supply',
-                            'Increases money supply',
-                            'Has no effect on money supply',
-                            'Only affects bond prices'
-                        ],
-                        correctIndex: 1,
-                        explanation: 'When the Fed buys bonds, it pays with newly created money, injecting reserves into the banking system and expanding money supply.'
-                    },
-                    {
-                        type: 'multiple_choice',
-                        question: 'To fight high inflation, the Fed would typically:',
-                        options: [
-                            'Buy bonds and lower rates',
-                            'Sell bonds and raise rates',
-                            'Print more money',
-                            'Lower reserve requirements'
-                        ],
-                        correctIndex: 1,
-                        explanation: 'To combat inflation, the Fed uses contractionary policy: selling bonds (reducing money supply) and raising interest rates to cool the economy.'
-                    }
-                ]
-            },
-            {
                 id: 'lesson_4_4',
-                title: 'Reserve Requirements',
-                icon: '🏦',
+                title: 'Fed Balance Sheet',
+                icon: '📋',
                 questions: [
                     {
                         type: 'multiple_choice',
-                        question: 'What are "Required Reserves"?',
+                        question: 'On the Fed\'s balance sheet, which is an ASSET?',
                         options: [
-                            'Money banks must hold and not lend out',
-                            'Emergency government funds',
-                            'Foreign currency holdings',
-                            'Bank profits set aside'
+                            'Currency in circulation',
+                            'Bank reserves',
+                            'Government securities (Treasuries)',
+                            'Reverse repos'
                         ],
-                        correctIndex: 0,
-                        explanation: 'Required Reserves are the minimum amount of deposits banks must hold (not lend), either as vault cash or deposits at the Fed.'
+                        correctIndex: 2,
+                        explanation: 'Fed ASSETS: Government bonds, MBS, loans to banks. LIABILITIES: Currency, bank reserves, Treasury General Account (TGA), Reverse Repo (ON RRP).'
                     },
                     {
                         type: 'multiple_choice',
-                        question: 'If reserve requirements DECREASE, the money multiplier:',
+                        question: 'The formula for US Dollar liquidity is approximately:',
                         options: [
-                            'Decreases',
+                            'GDP minus Debt',
+                            'Fed Balance Sheet - TGA - ON RRP',
+                            'M2 plus M3',
+                            'Total bank deposits'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Net liquidity ≈ Fed Assets - TGA (Treasury\'s checking account) - ON RRP (overnight reverse repo). This measures actual reserves available to the banking system.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'When the Treasury General Account (TGA) balance INCREASES, liquidity in the banking system:',
+                        options: [
                             'Increases',
+                            'Decreases',
                             'Stays the same',
                             'Becomes negative'
                         ],
                         correctIndex: 1,
-                        explanation: 'Lower reserve requirements mean banks can lend more of each deposit, increasing the money multiplier and potentially expanding money supply.'
+                        explanation: 'Higher TGA means Treasury is holding more cash at the Fed (from taxes/bond sales), draining reserves from the banking system and reducing liquidity.'
+                    }
+                ]
+            },
+            {
+                id: 'lesson_4_5',
+                title: 'Money Multiplier',
+                icon: '✖️',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is the money multiplier?',
+                        options: [
+                            'The interest rate times deposits',
+                            'The ratio of money supply to monetary base',
+                            'The number of banks in the system',
+                            'The inflation rate'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Money multiplier (m) = M/MB. It shows how much the money supply expands for each dollar of monetary base. Depends on reserve ratio and currency preferences.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'If the reserve requirement is 10%, what is the simple deposit multiplier?',
+                        options: [
+                            '1',
+                            '5',
+                            '10',
+                            '100'
+                        ],
+                        correctIndex: 2,
+                        explanation: 'Simple multiplier = 1/rr = 1/0.10 = 10. In theory, $1 of reserves can support $10 of deposits through repeated lending.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The actual money multiplier is typically LESS than the simple multiplier because:',
+                        options: [
+                            'Banks are dishonest',
+                            'People hold cash and banks hold excess reserves',
+                            'The Fed makes mistakes',
+                            'Inflation erodes it'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Currency held by public (doesn\'t get re-deposited) and excess reserves (banks choose not to lend all) reduce the effective multiplier.'
+                    }
+                ]
+            },
+            // 第15章 货币政策工具
+            {
+                id: 'lesson_4_6',
+                title: 'Fed Funds Market',
+                icon: '🎯',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is the Federal Funds Rate?',
+                        options: [
+                            'The rate the Fed charges taxpayers',
+                            'The overnight interbank lending rate for reserves',
+                            'The mortgage rate',
+                            'The Treasury bond yield'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The Fed Funds Rate is the interest rate banks charge each other for overnight loans of reserves. The Fed targets this rate as its main policy tool.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The Fed controls the Fed Funds Rate by:',
+                        options: [
+                            'Directly setting it by law',
+                            'Adjusting the supply of reserves through open market operations',
+                            'Asking banks nicely',
+                            'Setting bank profits'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The Fed targets the rate by managing reserve supply. More reserves → lower Fed Funds Rate. Fewer reserves → higher rate.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order these rates from typically lowest to highest:',
+                        items: ['Interest on Reserves (IOR)', 'Fed Funds Rate', 'Discount Rate', 'Prime Rate'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            {
+                id: 'lesson_4_7',
+                title: 'Conventional Tools',
+                icon: '🔧',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'Open Market Operations (OMO) refers to:',
+                        options: [
+                            'Opening new markets',
+                            'Fed buying/selling government securities',
+                            'Bank lending to public',
+                            'Stock market trading'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'OMO is the Fed\'s primary tool: buying bonds injects reserves (expansionary), selling bonds drains reserves (contractionary).'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The Discount Rate is:',
+                        options: [
+                            'The rate banks charge customers',
+                            'The rate the Fed charges banks for borrowing at the discount window',
+                            'The inflation rate',
+                            'The Treasury bill rate'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The Discount Rate is the Fed\'s "lender of last resort" rate. It\'s typically above the Fed Funds Rate to discourage overuse.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'Reserve requirements as a policy tool are:',
+                        options: [
+                            'The most frequently used tool',
+                            'Rarely changed and now effectively zero in the US',
+                            'Set by Congress',
+                            'Different for each bank'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The Fed reduced reserve requirements to 0% in March 2020. They\'re rarely used as a policy tool due to their disruptive effects on bank operations.'
+                    }
+                ]
+            },
+            {
+                id: 'lesson_4_8',
+                title: 'Unconventional Tools (QE)',
+                icon: '🚀',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'Quantitative Easing (QE) involves:',
+                        options: [
+                            'Raising interest rates',
+                            'Large-scale asset purchases when rates are near zero',
+                            'Reducing the money supply',
+                            'Increasing reserve requirements'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'QE is used when rates hit the zero lower bound. The Fed buys long-term bonds and MBS to lower long-term rates and inject liquidity.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'Quantitative Tightening (QT) means:',
+                        options: [
+                            'Buying more bonds',
+                            'Letting bonds mature without reinvesting or selling them',
+                            'Printing more money',
+                            'Lowering interest rates'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'QT shrinks the Fed\'s balance sheet by not reinvesting maturing securities, draining reserves from the system. It\'s the reverse of QE.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'Why did REPO rates spike in September 2019, alarming markets?',
+                        options: [
+                            'Banks had too much cash',
+                            'Reserve scarcity caused overnight funding stress',
+                            'The economy was too strong',
+                            'Inflation was too low'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The 2019 repo spike showed reserves had become scarce after QT. The Fed had to inject emergency liquidity, revealing the "ample reserves" floor system limits.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order Fed actions from most expansionary to most contractionary:',
+                        items: ['Quantitative Easing (QE)', 'Rate cuts', 'Rate hikes', 'Quantitative Tightening (QT)'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            // 第16章 货币政策战略与战术
+            {
+                id: 'lesson_4_9',
+                title: 'Policy Goals',
+                icon: '🎯',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'The Fed\'s inflation target is:',
+                        options: [
+                            '0%',
+                            '2% (average over time)',
+                            '5%',
+                            'No specific target'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Since 2012, the Fed has explicitly targeted 2% inflation (PCE). In 2020, it adopted "average inflation targeting" allowing temporary overshoots.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: '"Maximum employment" in the Fed\'s mandate means:',
+                        options: [
+                            '0% unemployment',
+                            'The lowest unemployment sustainable without causing inflation',
+                            '5% unemployment exactly',
+                            'Everyone working full-time'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Maximum employment is the highest employment level that doesn\'t trigger accelerating inflation. The Fed considers it a "broad-based and inclusive goal."'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The argument FOR price stability as the primary goal is:',
+                        options: [
+                            'Inflation helps workers',
+                            'Low, stable inflation provides a foundation for sustainable growth',
+                            'Central banks can\'t affect inflation',
+                            'Employment is more important'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Price stability anchors expectations, reduces uncertainty, and creates conditions for sustainable employment and growth. It\'s the foundation for other goals.'
+                    }
+                ]
+            },
+            {
+                id: 'lesson_4_10',
+                title: 'Inflation Targeting',
+                icon: '🎯',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'Inflation targeting as a monetary policy strategy involves:',
+                        options: [
+                            'Keeping inflation exactly at 0%',
+                            'Publicly announcing an inflation target and adjusting policy to achieve it',
+                            'Targeting money supply growth',
+                            'Targeting exchange rates'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Inflation targeting means setting a clear numerical target (e.g., 2%), communicating it, and adjusting policy to hit that target. Most major central banks use this framework.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The shift from monetary targeting to interest rate targeting occurred because:',
+                        options: [
+                            'Interest rates are easier to measure',
+                            'The relationship between money supply and inflation became unstable',
+                            'Congress mandated it',
+                            'Banks requested it'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Financial innovation made money velocity unstable, breaking the link between money supply and inflation. Interest rate targeting proved more effective.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order the evolution of Fed monetary policy strategy:',
+                        items: ['Gold standard era', 'Money supply targeting (1970s-80s)', 'Interest rate targeting', 'Inflation targeting with forward guidance'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            {
+                id: 'lesson_4_11',
+                title: 'Asset Bubbles',
+                icon: '🫧',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'The debate over whether central banks should target asset prices centers on:',
+                        options: [
+                            'Asset prices are easy to predict',
+                            'Difficulty identifying bubbles vs. fundamentals in real-time',
+                            'Central banks always know the right price',
+                            'Asset prices don\'t affect the economy'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The challenge: How do you know it\'s a bubble until it bursts? Greenspan argued we can\'t identify bubbles; post-2008 view is we should "lean against the wind."'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The 2008 financial crisis taught central banks that:',
+                        options: [
+                            'Asset bubbles don\'t matter',
+                            'Financial stability should be part of the policy framework',
+                            'Only inflation matters',
+                            'Regulation is unnecessary'
+                        ],
+                        correctIndex: 1,
+                        explanation: '2008 showed that financial instability can devastate the real economy even with low inflation. Macroprudential policy and financial stability are now key concerns.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: '"Leaning against the wind" in monetary policy means:',
+                        options: [
+                            'Ignoring asset prices',
+                            'Raising rates somewhat to cool potentially dangerous asset price increases',
+                            'Always keeping rates low',
+                            'Targeting exchange rates'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Leaning against the wind = modestly tightening policy when asset prices rise too fast, even if inflation is low. It\'s a preventive approach to bubbles.'
+                    }
+                ]
+            },
+            {
+                id: 'lesson_4_12',
+                title: 'Taylor Rule',
+                icon: '📏',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'The Taylor Rule suggests the Fed should set rates based on:',
+                        options: [
+                            'Stock market performance',
+                            'Inflation gap and output gap',
+                            'Bank profits',
+                            'Presidential requests'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Taylor Rule: i = r* + π + 0.5(π - π*) + 0.5(y - y*). Rates respond to inflation above/below target and output above/below potential.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'If inflation is 4% (target 2%) and output is at potential, the Taylor Rule suggests:',
+                        options: [
+                            'Cut rates',
+                            'Raise rates above neutral',
+                            'Keep rates unchanged',
+                            'Start QE'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'With inflation 2% above target, the rule says raise rates by 1.5× the gap (2% × 0.5 = 1% above neutral for inflation, plus the inflation rate itself).'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'Stagflation (high inflation + recession) creates a dilemma because:',
+                        options: [
+                            'It never happens',
+                            'Fighting inflation (raise rates) worsens unemployment; fighting unemployment (cut rates) worsens inflation',
+                            'The Fed has too many tools',
+                            'Both problems solve themselves'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Stagflation forces a painful choice: Volcker chose to crush inflation first (accepting recession). The Taylor Rule struggles when both gaps have opposite signs.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order Fed responses from most dovish to most hawkish:',
+                        items: ['QE + zero rates', 'Rate cuts', 'Hold rates steady', 'Rate hikes + QT'],
+                        correctOrder: [0, 1, 2, 3]
                     }
                 ]
             }
