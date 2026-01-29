@@ -109,10 +109,166 @@ export const UNITS = [
         description: 'Master the mathematics of money and risk.',
         color: '#1cb0f6',
         lessons: [
+            // 基础计量 (Basic Calculations)
             {
                 id: 'lesson_2_1',
+                title: 'Present Value',
+                icon: '💰',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is "Present Value" (PV)?',
+                        options: [
+                            'The future amount of money',
+                            'The current worth of future cash flows',
+                            'The interest rate',
+                            'The inflation rate'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Present Value is the current worth of a future sum of money, given a specified rate of return. It answers: "What is $X in the future worth today?"'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'If interest rates INCREASE, the present value of future cash flows:',
+                        options: [
+                            'Increases',
+                            'Decreases',
+                            'Stays the same',
+                            'Becomes zero'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Higher discount rates mean future money is worth less today. PV = FV / (1+r)^n, so as r increases, PV decreases.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'You will receive $1,100 in one year. If the interest rate is 10%, what is the present value?',
+                        options: [
+                            '$1,100',
+                            '$1,000',
+                            '$990',
+                            '$1,210'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'PV = $1,100 / (1 + 0.10) = $1,100 / 1.10 = $1,000. The $1,100 next year is equivalent to $1,000 today at 10% interest.'
+                    }
+                ]
+            },
+            {
+                id: 'lesson_2_2',
+                title: 'Future Value',
+                icon: '⏳',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is "Future Value" (FV)?',
+                        options: [
+                            'Money received today',
+                            'The value of current money at a future date',
+                            'The discount rate',
+                            'The bond price'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Future Value is what a current sum of money will be worth at a specified future date, given a rate of return. FV = PV × (1+r)^n.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'You invest $1,000 at 5% annual interest for 2 years (compounded). What is the future value?',
+                        options: [
+                            '$1,050',
+                            '$1,100',
+                            '$1,102.50',
+                            '$1,000'
+                        ],
+                        correctIndex: 2,
+                        explanation: 'FV = $1,000 × (1.05)² = $1,000 × 1.1025 = $1,102.50. Compounding means you earn interest on interest.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order these investments by future value after 10 years (lowest to highest), all starting with $1,000:',
+                        items: ['2% annual rate', '5% annual rate', '8% annual rate', '10% annual rate'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            {
+                id: 'lesson_2_3',
+                title: 'Discounting',
+                icon: '📉',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is "Discounting" in finance?',
+                        options: [
+                            'Getting a price reduction',
+                            'Converting future values to present values',
+                            'Selling bonds at a loss',
+                            'Reducing interest rates'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Discounting is the process of determining the present value of future cash flows by applying a discount rate. It\'s the reverse of compounding.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The "discount rate" represents:',
+                        options: [
+                            'The inflation rate only',
+                            'The opportunity cost of capital / required return',
+                            'The bank\'s fee',
+                            'The tax rate'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The discount rate reflects the time value of money and risk. It represents the return you could earn on alternative investments of similar risk.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order by present value of $10,000 received in 5 years (highest PV first):',
+                        items: ['Discount rate: 2%', 'Discount rate: 5%', 'Discount rate: 8%', 'Discount rate: 12%'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            {
+                id: 'lesson_2_4',
+                title: 'Maturity',
+                icon: '📅',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is "Maturity" (到期日) of a bond?',
+                        options: [
+                            'When the bond was issued',
+                            'The date when principal is repaid and bond expires',
+                            'When interest payments begin',
+                            'The bond\'s credit rating date'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Maturity is the date when the bond issuer must repay the principal (face value) to the bondholder. The bond ceases to exist after maturity.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'Longer maturity bonds typically have:',
+                        options: [
+                            'Lower interest rate risk',
+                            'Higher interest rate risk',
+                            'No interest rate risk',
+                            'Fixed prices'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Longer maturity = more sensitivity to interest rate changes. A 30-year bond will lose more value than a 2-year bond when rates rise.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order these bonds by typical maturity length:',
+                        items: ['Treasury Bills (T-Bills)', 'Treasury Notes', 'Treasury Bonds', 'Perpetual Bonds'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            // 工具与收益 (Instruments & Returns)
+            {
+                id: 'lesson_2_5',
                 title: 'Yield to Maturity',
-                icon: '📈',
+                icon: '🎯',
                 questions: [
                     {
                         type: 'multiple_choice',
@@ -124,7 +280,7 @@ export const UNITS = [
                             'The face value of a bond'
                         ],
                         correctIndex: 1,
-                        explanation: 'YTM is the total return anticipated if a bond is held until maturity, accounting for coupon payments and price changes.'
+                        explanation: 'YTM is the total return anticipated if a bond is held until maturity, accounting for coupon payments, price paid, and face value received.'
                     },
                     {
                         type: 'multiple_choice',
@@ -137,13 +293,25 @@ export const UNITS = [
                         ],
                         correctIndex: 1,
                         explanation: 'Bond prices and interest rates have an inverse relationship. When rates rise, existing bonds with lower rates become less attractive, lowering their prices.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'If a bond is trading at a DISCOUNT (below face value), then YTM is:',
+                        options: [
+                            'Lower than the coupon rate',
+                            'Higher than the coupon rate',
+                            'Equal to the coupon rate',
+                            'Zero'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'When price < face value, you gain from both coupons AND price appreciation at maturity, so YTM > coupon rate.'
                     }
                 ]
             },
             {
-                id: 'lesson_2_2',
-                title: 'Bond Types',
-                icon: '📜',
+                id: 'lesson_2_6',
+                title: 'Coupon Bonds',
+                icon: '🎫',
                 questions: [
                     {
                         type: 'multiple_choice',
@@ -159,20 +327,194 @@ export const UNITS = [
                     },
                     {
                         type: 'multiple_choice',
-                        question: 'A zero-coupon bond is sold at:',
+                        question: 'A bond has a face value of $1,000 and a 6% annual coupon rate. What is the annual coupon payment?',
                         options: [
-                            'Premium (above face value)',
-                            'Par (at face value)',
-                            'Discount (below face value)',
-                            'Variable price'
+                            '$6',
+                            '$60',
+                            '$600',
+                            '$106'
                         ],
-                        correctIndex: 2,
-                        explanation: 'Zero-coupon bonds pay no interest but are sold at a discount. The return comes from the difference between purchase price and face value at maturity.'
+                        correctIndex: 1,
+                        explanation: 'Annual coupon = Face value × Coupon rate = $1,000 × 6% = $60 per year.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is a "Discount Bond" (贴现债券)?',
+                        options: [
+                            'A bond sold at a reduced price due to low quality',
+                            'A zero-coupon bond sold below face value',
+                            'A bond with variable coupons',
+                            'A bond that matures early'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'A Discount Bond (like T-Bills) pays no coupons and is sold at a discount to face value. Your return comes entirely from price appreciation.'
                     }
                 ]
             },
             {
-                id: 'lesson_2_3',
+                id: 'lesson_2_7',
+                title: 'Rate of Return',
+                icon: '📊',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'The "Rate of Return" on a bond includes:',
+                        options: [
+                            'Only coupon payments',
+                            'Only price changes',
+                            'Coupon payments AND price changes',
+                            'Only the face value'
+                        ],
+                        correctIndex: 2,
+                        explanation: 'Rate of Return = (Coupon payment + Price change) / Initial price. It captures both income (coupons) and capital gains/losses.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'You buy a bond for $950, receive $50 in coupons, and sell it for $980. What is your rate of return?',
+                        options: [
+                            '5.26%',
+                            '8.42%',
+                            '3.16%',
+                            '10%'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Return = ($50 coupon + $30 price gain) / $950 = $80 / $950 = 8.42%'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order these bond scenarios by rate of return (lowest to highest):',
+                        items: ['Price fell, low coupon', 'Price stable, medium coupon', 'Price rose, medium coupon', 'Price rose, high coupon'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            // 宏观因素 (Macro Factors)
+            {
+                id: 'lesson_2_8',
+                title: 'Nominal vs Real Rates',
+                icon: '💵',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is the "Nominal Interest Rate"?',
+                        options: [
+                            'The rate adjusted for inflation',
+                            'The stated rate without inflation adjustment',
+                            'The central bank rate only',
+                            'The real purchasing power gain'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The Nominal Interest Rate is the stated rate you see quoted (e.g., 5% on your savings account). It does NOT account for inflation.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'What is the "Real Interest Rate"?',
+                        options: [
+                            'The rate before taxes',
+                            'The nominal rate minus expected inflation',
+                            'The highest available rate',
+                            'The government bond rate'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Real Interest Rate = Nominal Rate - Inflation. It measures the true increase in purchasing power of your money.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'If the nominal rate is 6% and inflation is 4%, the real interest rate is approximately:',
+                        options: [
+                            '10%',
+                            '2%',
+                            '4%',
+                            '24%'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Real rate ≈ Nominal rate - Inflation = 6% - 4% = 2%. Your actual purchasing power only grows by about 2%.'
+                    }
+                ]
+            },
+            {
+                id: 'lesson_2_9',
+                title: 'Fisher Equation',
+                icon: '📐',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'The Fisher Equation states that:',
+                        options: [
+                            'Nominal rate = Real rate + Expected inflation',
+                            'Real rate = Nominal rate + Inflation',
+                            'Inflation = Nominal rate × Real rate',
+                            'Interest = Principal × Time'
+                        ],
+                        correctIndex: 0,
+                        explanation: 'Fisher Equation: i = r + πᵉ, where i = nominal rate, r = real rate, πᵉ = expected inflation. Lenders demand compensation for expected inflation.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'According to the Fisher Effect, if expected inflation rises by 2%, nominal rates should:',
+                        options: [
+                            'Fall by 2%',
+                            'Rise by 2%',
+                            'Stay the same',
+                            'Fall by 1%'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'The Fisher Effect predicts a one-to-one relationship: higher expected inflation leads to proportionally higher nominal rates to maintain real returns.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order by expected nominal interest rate (assuming 2% real rate):',
+                        items: ['Expected inflation: 1%', 'Expected inflation: 3%', 'Expected inflation: 5%', 'Expected inflation: 8%'],
+                        correctOrder: [0, 1, 2, 3]
+                    }
+                ]
+            },
+            {
+                id: 'lesson_2_10',
+                title: 'Inflation Expectations',
+                icon: '🔮',
+                questions: [
+                    {
+                        type: 'multiple_choice',
+                        question: 'Why do inflation expectations matter for interest rates?',
+                        options: [
+                            'They don\'t matter',
+                            'Lenders demand higher rates to compensate for expected purchasing power loss',
+                            'Inflation always equals interest rates',
+                            'Only central banks care about inflation'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'If lenders expect 3% inflation, they\'ll demand at least 3% nominal interest just to maintain purchasing power, plus a real return on top.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'TIPS (Treasury Inflation-Protected Securities) protect investors from:',
+                        options: [
+                            'Default risk',
+                            'Unexpected inflation',
+                            'Interest rate changes',
+                            'Currency risk'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'TIPS adjust their principal value with inflation, guaranteeing a real return regardless of actual inflation outcomes.'
+                    },
+                    {
+                        type: 'multiple_choice',
+                        question: 'The "breakeven inflation rate" can be calculated by:',
+                        options: [
+                            'Dividing GDP by money supply',
+                            'Nominal Treasury yield minus TIPS yield',
+                            'Adding all interest rates together',
+                            'Central bank announcement'
+                        ],
+                        correctIndex: 1,
+                        explanation: 'Breakeven inflation = Nominal yield - TIPS yield. This market-implied measure shows what inflation rate would make you indifferent between the two bonds.'
+                    }
+                ]
+            },
+            // 风险与结构 (Risk & Structure)
+            {
+                id: 'lesson_2_11',
                 title: 'Risk Premium',
                 icon: '⚡',
                 questions: [
@@ -197,7 +539,7 @@ export const UNITS = [
                 ]
             },
             {
-                id: 'lesson_2_4',
+                id: 'lesson_2_12',
                 title: 'Term Structure',
                 icon: '🎢',
                 questions: [
@@ -224,6 +566,12 @@ export const UNITS = [
                         ],
                         correctIndex: 1,
                         explanation: 'An inverted yield curve (short-term rates higher than long-term) has historically been a reliable predictor of economic recessions.'
+                    },
+                    {
+                        type: 'sort',
+                        question: 'Order yield curve shapes from most bullish to most bearish economic signal:',
+                        items: ['Steep upward slope', 'Normal upward slope', 'Flat curve', 'Inverted curve'],
+                        correctOrder: [0, 1, 2, 3]
                     }
                 ]
             }
